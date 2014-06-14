@@ -1,0 +1,192 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>以OpenStreetMap 繪製服貿衝擊地圖</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="lib/shower/themes/ribbon/styles/screen.css">
+	<link rel="stylesheet" href="lib/csshake.min.css">
+	<style type="text/css" media="all">
+	        section.slide p.source {
+            		color: #000;
+            		position: absolute;
+            		bottom: 10px;
+            		right: 10px;
+            		text-align: right;
+            		font-size: 0.8em;
+            		margin: 0px;
+        	}   
+        	section.slide p.source a {
+            		color: #000;
+        	}
+        	table.clean td img {
+            		vertical-align: top;
+        	}
+        	table.clean td {
+            		background: none;
+        	}
+			section.slide.cover h2{
+				color: #000;
+				font-size: 70 px;
+				text-align:center;
+				background-color: rgba(250, 250, 250, 0.5);
+			}
+        
+			/* two column slides */
+			section.slide.twocol div.left {
+				width: 	48%;
+				float: left;
+			}
+			section.slide.twocol div.right {
+				width: 48%;
+				float: right;
+			}
+			section.slide.twocol-ll div.left {
+				width: 65%;
+				float: left;
+			}
+			section.slide.twocol-ll div.right {
+				width: 35%;
+				float: right;
+			}
+			section.slide.twocol-lr div.left {
+				width: 35%;
+				float: left;
+			}
+			section.slide.twocol-lr div.right {
+				width: 65%;
+				float: right;
+			}
+    		</style>
+		<link rel="stylesheet" href="lib/highlight/styles/default.css">
+		<script src="lib/highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+		<script src="lib/flowchart.js"></script>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>服貿衝擊地圖</h1>
+		<p>2014-06-14</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>以OpenStreetMap 繪製服貿衝擊地圖</h2>
+		<p><a href="http://www.mcdlee.tw">Sin-di Lee</a></p>
+		<p><a href="mailto:mcdlee@gmail.com">mcdlee@gmail.com</a></p>
+		<p>2014-06-14</p>
+		<p class="source">Background picture: <a href="http://maps.stamen.com/watercolor/">Stamen</a> / Map data: <a href="http://www.openstreetmap.org">OSM</a> and its contributors</p>
+		<img src="pics/cover.png" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:80px 0 0;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#000;
+				font-style:italic;
+				font-size:20px;
+				}
+			#Cover p a {
+				color:#000;
+				}
+		</style>
+	</div></section>
+	<section class="slide"><div>
+	<h2>自我介紹</h2>
+	<ul>
+		<li class="next">李昕迪 = mcdlee</li>
+		<li class="next"><a href="http://www.openstreetmap.org">OpenStreetMap</a> 圖客 since 2009</li>
+	</ul>
+	</div></section>
+	<section class="slide shout"><div>
+	<h2>什麼是OpenStreetMap</h2>
+	</div></section>
+	<section class="slide twocol"><div>
+	<h2>OpenStreetMap</h2>
+	<div class="left">
+	<ul>
+		<li class="next">以群策群力方式繪製的全球地圖</li>
+		<li class="next">授權開放 (ODbL)</li>
+		<li class="next">資料型態開放</li></ul>
+	</div>
+	<div class="right">
+	<img src="pics/osmlogo.png" width="80%"/>
+	</div>
+	</div></section>
+	<section class="slide shout grow"><div>
+	<h2>自己的地圖<br />自己畫</h2>
+	</div></section>
+	<section class="slide"><div>
+	<iframe width="800" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=120.30404806137084%2C22.643947293595883%2C120.31272768974304%2C22.650125881350903&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=17/22.64704/120.30839&amp;layers=N">查看更大的地圖</a></small>
+	</div></section>
+	<section class="slide"><div>
+	<iframe width="800" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=120.30404806137084%2C22.643947293595883%2C120.31272768974304%2C22.650125881350903&amp;layer=mapquest" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=17/22.64704/120.30839&amp;layers=N">查看更大的地圖</a></small>
+	</div></section>
+	<section class="slide"><div>
+	<img src="pics/wheelmap.png" class="place" />
+	<p class="source"><a href="http://wheelmap.org/zh-tw/map">http://wheelmap.org/zh-tw/map</a></p>
+	</div></section>
+	<section class="slide"><div>
+	<img src="pics/hot.png" width="90%" class="place" />
+	<p class="source"><a href="http://a.tiles.mapbox.com/v3/americanredcross.map-ms6tihx6/page.html#16/11.2473/125.0031">http://a.tiles.mapbox.com/v3/americanredcross.map-ms6tihx6/page.html#16/11.2473/125.0031</a></p>
+	</div></section>
+	<section class="slide"><div>
+	<img src="pics/overpass-turbo.png" class="place" width="60%"/>
+	<p class="source"><a href="http://overpass-turbo.eu/s/3JP">去年新莊的例子</a></p>
+	</div></section>
+	<section class="slide twocol"><div>
+	<div class="left">
+	<h2>編輯地圖的步驟</h2>
+		<ul>
+		<li>收集資料</li>
+		<li>編輯資料</li></ul>
+	</div>
+	<div class="right">
+	<img src="pics/collect.jpg" width="90%"/>
+	<img src="pics/edit.jpg" width="90%"/>
+	</div>
+	</div></section>
+	<section class="slide"><div>
+	<h2>收集資料</h2>
+	<ul>
+		<li>經緯度 (空照圖 or GPS)</li>
+		<li>名稱</li>
+		<li>類型 (eg: 餐廳、五金行)</li>
+		<li>地址、電話</li>
+		<li>特色</li>
+		<li>受服貿的衝擊、對輪椅的支援等等</li></ul>
+	</div></section>
+	<section class="slide"><div>
+	<h2>編輯資料</h2>
+	<ul>
+		<li><a href="http://www.openstreetmap.org/edit?editor=id">iD 編輯器</a></li>
+		<li><a href="http://josm.openstreetmap.de/">JOSM 編輯器</a></li></ul>
+	<h2>標籤</h2>
+	<ul>
+		<li>note:tisa = yes / no</li>
+		<li>note:tisa:discription = blah blah blah</li>
+		<li><a href="https://docs.google.com/presentation/d/1OnzBGDt6StSXmXDVluO_TOa3bmz4TU0KXVteqD_4h-k/edit#slide=id.gf47a9741_014">教學</a></li></ul>
+	</div></section>
+	<section class="slide shout"><div>
+	<h2>地圖是權力!</h2>
+	</div></section>
+	<section class="slide shout"><div>
+	<h2>感謝大家</h2>
+	</div></section>
+	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="lib/shower/shower.min.js"></script>
+	<!-- Copyright 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
